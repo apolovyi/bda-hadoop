@@ -12,7 +12,7 @@ sudo sed -i '/<configuration>/a <property> <name>mapreduce.jobtracker.address</n
 
 #hdfs-site.xml
 sudo sed -i '/<configuration>/,/<\/configuration>/{//!d}' /home/$hdUserName/hadoop/etc/hadoop/hdfs-site.xml
-sudo sed -i '/<configuration>/a <property> <name>dfs.replication</name> <value>2</value> </property> <property> <name>dfs.namenode.name.dir</name> <value>home/'$hdUserName'/hadoop/data/hdfs/namenode</value> </property> <property> <name>dfs.datanode.data.dir</name> <value>home/'$hdUserName'/hadoop/data/hdfs/datanode</value> </property>' /home/$hdUserName/hadoop/etc/hadoop/hdfs-site.xml
+sudo sed -i '/<configuration>/a <property> <name>dfs.replication</name> <value>2</value> </property> <property> <name>dfs.namenode.name.dir</name> <value>home/'$hdUserName'/hadoop/data/hdfs/namenode</value> </property> <property> <name>dfs.datanode.data.dir</name> <value>home/'$hdUserName'/hadoop/data/hdfs/datanode</value> </property> <property> <name>dfs.block.size</name> <value>134217728</value> </property>' /home/$hdUserName/hadoop/etc/hadoop/hdfs-site.xml
 
 #yarn-site.xml
 sudo sed -i '/<configuration>/,/<\/configuration>/{//!d}' /home/$hdUserName/hadoop/etc/hadoop/yarn-site.xml
