@@ -41,26 +41,14 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  #config.vm.network "bridged", bridge: "bridge0"
+  # config.vm.network "public_network", bridge: "en5: USB Ethernet(?)"
+  # config.vm.network "public_network", bridge: "en7: USB 10/100/1000 LAN"
   config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
-  #config.vm.network "public_network", bridge: "en5: USB Ethernet(?)"
-  #config.vm.network "public_network", bridge: "en7: USB 10/100/1000 LAN"
 
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
-
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
     v.cpus = 2
     v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
-    # v.customize ["modifyhd", "8f5baa6d-17e7-434c-ba93-44811b941697", "--resize", "10000"] 
   end
   
 
@@ -87,12 +75,4 @@ Vagrant.configure("2") do |config|
     node.vm.provision "shell", path: "hadoop-install.sh"
     node.vm.provision "shell", path: "slave-config.sh"
   end
-
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
 end

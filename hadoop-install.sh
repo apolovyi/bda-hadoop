@@ -1,5 +1,4 @@
 #!/bin/bash
-
 hdGroup='hdgroup'
 hdUserName='hduser'
 
