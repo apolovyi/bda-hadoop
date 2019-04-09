@@ -8,10 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Install Vagrant  
+Download and install Vagrant  
 https://www.vagrantup.com/downloads.html
 
-Install Virtual Box  
+Download and install Virtual Box  
 https://www.virtualbox.org/wiki/Downloads
 
 ### Installing
@@ -44,6 +44,8 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@node02
 
 ### Running hadoop cluster
 
+Format the file system and start hadoop processes:
+
 ```
 hdfs namenode -format
 
@@ -51,6 +53,8 @@ start-dfs.sh
 
 start-yarn.sh
 ```
+
+### Testing hadoop cluster
 
 To generate file run following:
 
@@ -60,9 +64,9 @@ echo 'hello new word hello old word hello word hello word' > file1.txt
 for i in {1..23}; do cat file1.txt file1.txt > file2.txt && mv file2.txt file1.txt; done
 ```
 
-After 23 iterations you will get 436 Mb file, after 25 - 1.7 Gb.
+After 23 iterations you will get 436 MB file, after 25 - 1.7 GB file.
 
-Create directory for file and put it there
+Create directory for file and put it there:
 
 ```
 hdfs dfs -mkdir -p /bda_course/exercise01
@@ -82,10 +86,6 @@ To check output run:
 hdfs dfs -cat hdfs://master:9000/output/part-r-00000
 ```
 
-Links to hadoop web interfaces:  
-http://master:9870  
-http://master:8088
-
 To stop hadoop cluster:
 
 ```
@@ -93,3 +93,7 @@ stop-dfs.sh
 
 stop-yarn.sh
 ```
+
+###Links to hadoop web interfaces:  
+http://master:9870  
+http://master:8088
