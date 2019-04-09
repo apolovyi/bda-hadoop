@@ -94,6 +94,7 @@ stop-dfs.sh
 stop-yarn.sh
 ```
 
-###Links to hadoop web interfaces:  
+### Links to hadoop web interfaces:
+
 http://master:9870  
 http://master:8088
