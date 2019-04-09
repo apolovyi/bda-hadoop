@@ -38,7 +38,11 @@ Execute wordcount job:
 
 yarn jar hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.0.jar wordcount "hdfs://master:9000/bda_course/exercise01/file1.txt" hdfs://master:9000/output/
 
-hdfs dfs -ls hdfs://master:9000/output/
+Output:
+hdfs dfs -cat hdfs://master:9000/output/part-r-00000
 
 stop-dfs.sh
 stop-yarn.sh
+
+http://master:9870
+http://master:8088
