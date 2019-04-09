@@ -44,7 +44,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub hduser@node02
 
 ### Running hadoop cluster
 
-Format the file system and start hadoop processes:
+Format the file system and start hadoop daemons:
 
 ```
 hdfs namenode -format
