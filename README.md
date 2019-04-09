@@ -1,4 +1,7 @@
-Vagrant Hadoop Cluster
+Hadoop Cluster
+
+To create VM's run:
+vagrant up
 
 user:password
 vagrant:vagrant
@@ -18,19 +21,16 @@ start-yarn.sh
 
 Generate file:
 
-echo 'new hello word hello word hello word hello word' > file1.txt
+echo 'hello new word hello old word hello word hello word' > file1.txt
 
-for i in {1..25}; do cat file1.txt file1.txt > file2.txt && mv file2.txt file1.txt; done
+for i in {1..23}; do cat file1.txt file1.txt > file2.txt && mv file2.txt file1.txt; done
 
-{1..25}-> 1.6 Gb
+{1..23}-> 436 Mb
+{1..25}-> 1.7 Gb
 
 hdfs dfs -mkdir -p /bda_course/exercise01
 
 hdfs dfs -put file1.txt /bda_course/exercise01
-
-dd if=/dev/urandom of=file1.txt bs=1048576 count=1000
-
-hadoop fs -copyFromLocal file1.txt hdfs://master:9000/
 
 hdfs dfs -ls hdfs://master:9000/bda_course/exercise01
 

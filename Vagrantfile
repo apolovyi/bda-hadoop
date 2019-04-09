@@ -14,20 +14,6 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "pristine/ubuntu-budgie-18-x64"
 
-  # required_plugins = %w( vagrant-vbguest vagrant-disksize )
-  # _retry = false
-  # required_plugins.each do |plugin|
-  #     unless Vagrant.has_plugin? plugin
-  #         system "vagrant plugin install #{plugin}"
-  #         _retry=true
-  #     end
-  # end
-
-  # if (_retry)
-  #     exec "vagrant " + ARGV.join(' ')
-  # end
-  # config.disksize.size = "20GB"
-
   #config.vm.box = "relativkreativ/ubuntu-18-minimal"
   #config.vm.box = "generic/ubuntu1810"
   #config.vm.box = "geerlingguy/ubuntu1804"
