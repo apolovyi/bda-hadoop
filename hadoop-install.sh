@@ -22,16 +22,16 @@ sudo sed -i '1i10.0.0.10  master' /etc/hosts
 sudo sed -i '1i10.0.0.11  node01' /etc/hosts
 sudo sed -i '1i10.0.0.12  node02' /etc/hosts
 
-echo "Move hadoop 3.1.0"
-sudo tar xfz /vagrant/files/hadoop-3.1.0.tar.gz
-sudo mv hadoop-3.1.0 /home/$hdUserName/hadoop
-
-# echo "Downloading and unpacking hadoop 3.1.0"
-# sudo wget -q http://archive.apache.org/dist/hadoop/core/hadoop-3.1.0/hadoop-3.1.0.tar.gz  
-# sudo tar xfz hadoop-3.1.0.tar.gz
-# sudo rm hadoop-3.1.0.tar.gz
-# echo "Moving hadoop 3.1.0 to /home/$hdUserName/hadoop"
+# echo "Move hadoop 3.1.0"
+# sudo tar xfz /vagrant/files/hadoop-3.1.0.tar.gz
 # sudo mv hadoop-3.1.0 /home/$hdUserName/hadoop
+
+echo "Downloading and unpacking hadoop 3.1.0"
+sudo wget -q http://archive.apache.org/dist/hadoop/core/hadoop-3.1.0/hadoop-3.1.0.tar.gz  
+sudo tar xfz hadoop-3.1.0.tar.gz
+sudo rm hadoop-3.1.0.tar.gz
+echo "Moving hadoop 3.1.0 to /home/$hdUserName/hadoop"
+sudo mv hadoop-3.1.0 /home/$hdUserName/hadoop
 
 sudo chown -R $hdUserName:$hdGroup /home/$hdUserName/hadoop
 
